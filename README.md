@@ -1095,14 +1095,6 @@ For questions, issues, or feature requests:
 - **Supported File Types**: 10+
 - **Transport Protocols**: STDIO, SSE
 
----
-
-**Built with ❤️ by the Cortex-R Team**
-
-*Making AI agents accessible, powerful, and user-friendly.*
-
----
-
 ## 🎓 Learn More
 
 - [MCP Documentation](https://modelcontextprotocol.io/)
