@@ -70,29 +70,22 @@ class MultiMCP:
                     url = config.get("url", "http://localhost:8000")
                     print(f"→ Connecting to SSE server: {url}")
                     
-                    try:
-                        async with sse_client(url) as (read, write):
-                            print("SSE connection established, creating session...")
-                            try:
-                                async with ClientSession(read, write) as session:
-                                    print("[agent] Session created, initializing...")
-                                    await session.initialize()
-                                    print("[agent] MCP session initialized")
-                                    tools = await session.list_tools()
-                                    print(f"→ Tools received: {[tool.name for tool in tools.tools]}")
-                                    for tool in tools.tools:
-                                        self.tool_map[tool.name] = {
-                                            "config": config,
-                                            "tool": tool
-                                        }
-                            except Exception as se:
-                                print(f"❌ Session error: {se}")
-                                import traceback
-                                traceback.print_exc()
-                    except Exception as conn_error:
-                        print(f"❌ Connection error: {conn_error}")
-                        import traceback
-                        traceback.print_exc()
+                    async with sse_client(url) as (read, write):
+                        print("SSE connection established, creating session...")
+                        try:
+                            async with ClientSession(read, write) as session:
+                                print("[agent] Session created, initializing...")
+                                await session.initialize()
+                                print("[agent] MCP session initialized")
+                                tools = await session.list_tools()
+                                print(f"→ Tools received: {[tool.name for tool in tools.tools]}")
+                                for tool in tools.tools:
+                                    self.tool_map[tool.name] = {
+                                        "config": config,
+                                        "tool": tool
+                                    }
+                        except Exception as se:
+                            print(f"❌ Session error: {se}")
                 else:
                     # STDIO transport (default)
                     params = StdioServerParameters(

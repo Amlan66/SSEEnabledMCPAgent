@@ -17,6 +17,7 @@ dependencies = [
     "pillow>=11.2.1",
     "pydantic>=2.11.3",
     "pymupdf4llm>=0.0.21",
+    "python-telegram-bot>=22.5",
     "requests>=2.32.3",
     "rich>=14.0.0",
     "tqdm>=4.67.1",

@@ -3,3 +3,9 @@ __pycache__/
 .env
 /documents/
 /faiss_index/
+credentials.json
+token.json
+*.bat
+TELEGRAM_SETUP_GUIDE.md
+IMPLEMENTATION_SUMMARY.md
+QUICK_START.md

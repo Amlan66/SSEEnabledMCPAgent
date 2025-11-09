@@ -27,13 +27,19 @@ persona:
 mcp_servers:
   - id: math
     script: mcp_server_1.py
-    cwd: C:/TSAI EAG 2/Session 8/S8 Share
+    cwd: C:/TSAI EAG 2/S8/SSEEnabledMCPAgent
+    transport: stdio
   - id: documents
     script: mcp_server_2.py
-    cwd: C:/TSAI EAG 2/Session 8/S8 Share
+    cwd: C:/TSAI EAG 2/S8/SSEEnabledMCPAgent
+    transport: stdio
   - id: websearch
     script: mcp_server_3.py
-    cwd: C:/TSAI EAG 2/Session 8/S8 Share
+    cwd: C:/TSAI EAG 2/S8/SSEEnabledMCPAgent
+    transport: stdio
+  - id: telegram
+    transport: sse
+    url: http://localhost:8000/sse
 
 
 
